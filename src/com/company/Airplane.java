@@ -37,23 +37,25 @@ public class Airplane {
 
     @Override
     public boolean equals ( Object obj ) {
-        return super.equals ( obj );
+        if (this == obj) return true;
+        if (obj == null || getClass () != obj.getClass ()) return false;
+        Airplane airplane = (Airplane) obj;
+
+        if (setingCapacity != airplane.setingCapacity ) return  false;
+        return flightRange == airplane.flightRange;
+
     }
 
-    @Override
-    public int hashCode () {
-        return super.hashCode ();
-    }
 
     public static void main ( String[] args ) {
-        Airplane airplaneS7 = new Airplane(250, 30, "S7");
-        Airplane airplaneUral = new Airplane(250, 30, "UralAirlines");
+        Airplane airplaneS7 = new Airplane(222, 33, "S7");
+        Airplane airplaneUral = new Airplane(222, 33, "UralAirlines");
         System.out.println(airplaneS7.equals(airplaneUral));
-        Airplane airplaneS71 = new Airplane(240, 30, "S7");
-        Airplane airplaneUral2 = new Airplane(250, 20, "UralAirlines");
+        Airplane airplaneS71 = new Airplane(444, 33, "S7");
+        Airplane airplaneUral2 = new Airplane(444, 22, "UralAirlines");
         System.out.println(airplaneS71.equals(airplaneUral2));
-        Airplane airplaneS72 = new Airplane(239, 30, "S7");
-        Airplane airplaneUral3 = new Airplane(250, 19, "UralAirlines");
+        Airplane airplaneS72 = new Airplane(432, 33, "S7");
+        Airplane airplaneUral3 = new Airplane(321, 54, "UralAirlines");
         System.out.println(airplaneS72.equals(airplaneUral3));
     }
 }
